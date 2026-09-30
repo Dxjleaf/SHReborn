@@ -589,6 +589,11 @@ function iconTag(n){
 }
 window.__miErr=function(img){
   const n=img.getAttribute('data-n');
+  if(!img.dataset.tried){
+    img.dataset.tried='1';
+    img.src='https://cdn.jsdelivr.net/gh/maka235711/Reborn_recipes7@main/icons/'+encodeURIComponent(n)+'.png';
+    return;
+  }
   if(n) ICON_FAIL.add(n);
   if(img.parentNode) img.parentNode.removeChild(img);
 };
